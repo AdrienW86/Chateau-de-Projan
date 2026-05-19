@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* 1. CONFIGURATION DE LA CHARTE GRAPHIQUE (TAILWIND v4) */
+@theme {
+  /* Nos polices de luxe liées aux polices Google de ton Layout */
+  --font-serif: var(--font-serif), serif;
+  --font-sans: var(--font-sans), sans-serif;
+
+  /* Nos couleurs personnalisées pour le Château de Projan */
+  --color-chateau-or: #C5A880;
+  --color-chateau-pierre: #F9F6F0;
+  --color-chateau-anthracite: #1A1A1A;
+  --color-chateau-vert: #2C3E35;
+}
+
+/* 2. STYLES GLOBAUX DU SITE */
+:root {
+  --background: var(--color-chateau-pierre);
+  --foreground: var(--color-chateau-anthracite);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  margin: 0;
+  padding: 0;
+}
+
+/* Optionnel : Supprime les soulignements par défaut des liens si besoin */
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,28 @@
+# Dépendances (lourd et inutile sur Git)
+node_modules/
+/.pnp
+.pnp.js
+
+# Environnement et Secrets (A NE JAMAIS COMMIT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+
+# Builds Next.js et logs
+.next/
+out/
+build/
+.open-next/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Fichiers système et IDE
+.DS_Store
+*.pem
+.env.local
+.vscode/
+.idea/
