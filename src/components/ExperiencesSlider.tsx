@@ -6,35 +6,33 @@ import Image from "next/image";
 export default function ExperiencesSlider() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Liste des expériences immersives à vivre au château
   const experiences = [
     {
       tag: "Culture",
       title: "Parcours d'Art Contemporain",
       description: "Flânez dans le parc et les salons pour découvrir une collection privée d'œuvres singulières et de sculptures monumentales.",
-      image: "/image4.jpg", // Remplace par ton image
+      image: "/image4.jpg",
     },
     {
       tag: "Épicurisme",
       title: "Éveil des Sens & Armagnac",
       description: "Une initiation exclusive aux secrets des vieux millésimes de la région, guidée par un sommelier passionné.",
-      image: "/image5.jpg", // Remplace par ton image
+      image: "/image5.jpg",
     },
     {
       tag: "Bien-être",
       title: "Sérénité sous les Cèdres",
       description: "Profitez d'une séance de yoga matinale ou d'un massage sur mesure à l'ombre des arbres séculaires du domaine.",
-      image: "/image6.jpg", // Remplace par ton image
+      image: "/image6.jpg",
     },
     {
       tag: "Découverte",
       title: "Échappée Gasconne",
       description: "Explorez les marchés de producteurs du Gers, les bastides médiévales et les vignobles secrets environnants.",
-      image: "/image7.jpg", // Remplace par ton image
+      image: "/image7.jpg",
     },
   ];
 
-  // Fonctions de navigation pour les flèches du slider
   const scroll = (direction: "left" | "right") => {
     if (sliderRef.current) {
       const { scrollLeft, clientWidth } = sliderRef.current;
@@ -59,7 +57,7 @@ export default function ExperiencesSlider() {
             </h2>
           </div>
 
-          {/* Flèches de navigation (visibles sur desktop) */}
+          {/* Flèches de navigation (desktop) */}
           <div className="hidden md:flex space-x-4">
             <button 
               onClick={() => scroll("left")}
@@ -78,27 +76,30 @@ export default function ExperiencesSlider() {
           </div>
         </div>
 
-        {/* CONTENEUR DU SLIDER HORIZONTAL */}
+        {/* CONTENEUR DU SLIDER HORIZONTAL NETTOYÉ ET FLUIDE */}
         <div 
           ref={sliderRef}
-          className="flex space-x-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory touch-pan-x"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex space-x-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory overscroll-x-contain"
+          style={{ 
+            scrollbarWidth: "none", 
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch" // Permet le défilement fluide "au pouce" sur iOS
+          }}
         >
           {experiences.map((exp, index) => (
             <div 
               key={index} 
-              className="w-[85vw] sm:w-[45vw] lg:w-[30vw] flex-shrink-0 snap-start group"
+              className="w-[80vw] sm:w-[45vw] lg:w-[30vw] flex-shrink-0 snap-start group select-none"
             >
               {/* Image de l'expérience */}
-              <div className="w-full h-[380px] sm:h-[450px] relative overflow-hidden shadow-xl mb-6">
+              <div className="w-full h-[350px] sm:h-[450px] relative overflow-hidden shadow-xl mb-6 pointer-events-none">
                 <Image
                   src={exp.image}
                   alt={exp.title}
                   fill
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  sizes="(max-w-640px) 85vw, (max-w-1024px) 45vw, 30vw"
+                  sizes="(max-w-640px) 80vw, (max-w-1024px) 45vw, 30vw"
                 />
-                {/* Overlay sombre discret sur le bas de l'image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-chateau-anthracite/40 to-transparent opacity-60" />
               </div>
 
