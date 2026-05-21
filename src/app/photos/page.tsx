@@ -230,7 +230,7 @@ const photos = [
   },
   {
     id: 34,
-    src: "/image11.jpg", // Adapté pour éviter le doublon d'asset de la piscine
+    src: "/image8.jpg", // Adapté pour éviter le doublon d'asset de la piscine
     alt: "Le salon du piano",
     category: "suites", // Rectifié en suites
     size: "tall",
