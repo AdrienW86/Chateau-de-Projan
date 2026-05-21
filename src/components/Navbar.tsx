@@ -28,6 +28,9 @@ export default function Navbar() {
           <Link href="/chambres" className="hover:text-chateau-or transition-colors duration-200">
             Les Chambres
           </Link>
+          <Link href="/photos" className="hover:text-chateau-or transition-colors duration-200">
+            Galerie photos
+          </Link>
           <Link href="/restaurant" className="hover:text-chateau-or transition-colors duration-200">
             La Table
           </Link>
@@ -77,6 +80,9 @@ export default function Navbar() {
           </Link>
           <Link href="/art" onClick={() => setIsOpen(false)} className="hover:text-chateau-or transition-colors">
             L'Art & Le Domaine
+          </Link>
+           <Link href="/photos" className="hover:text-chateau-or transition-colors duration-200">
+            Galerie photos
           </Link>
           <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-chateau-or transition-colors">
             Contact

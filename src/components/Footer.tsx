@@ -78,7 +78,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 font-sans text-chateau-pierre/80 tracking-wide">
               <li>
-                <a href="tel:+33562000000" className="hover:text-white transition-colors">+33 (0)5 62 00 00 00</a>
+                <a href="tel:+33562000000" className="hover:text-white transition-colors">+33 (0)5 62 09 46 21</a>
               </li>
               <li>
                 <a href="mailto:contact@chateaudeprojan.com" className="hover:text-white transition-colors">contact@chateaudeprojan.com</a>
@@ -98,6 +98,7 @@ export default function Footer() {
             </h4>
             <p className="font-sans text-chateau-pierre/80 tracking-wide leading-relaxed">
               Château de Projan <br />
+              Route du château <br />
               32400 Projan <br />
               Gers, Occitanie · France
             </p>
